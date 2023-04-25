@@ -3,36 +3,32 @@
 
 #include <iostream>
 #include "Human.h"
+#include "Apartment.h"
 using namespace std;
 int main()
 {
-	Human hum("Sasha", true, "+79991112233");
-	cout << hum.getName() << endl;
-	cout << hum.getMan() << endl;
-	cout << hum.getTelNumber() << endl;
-	cout << "--------------------------" << endl;
-	Human hum2(hum);
-	Human hum3 = hum;
-	hum.setName("SashaSasha");
-	hum.setTelNumber("+71234567890");
-	cout << hum.getName() << endl;
-	cout << hum.getMan() << endl;
-	cout << hum.getTelNumber() << endl;
-	cout << "--------------------------" << endl;
-	cout << hum2.getName() << endl;
-	cout << hum2.getMan() << endl;
-	cout << hum2.getTelNumber() << endl;
-	char* name2 = new char[100];
-	cin >> name2;
-	hum2.setName(name2);
-	cout << "--------------------------" << endl;
-	cout << hum2.getName() << endl;
-	cout << hum2.getMan() << endl;
-	cout << hum2.getTelNumber() << endl;
-	cout << "--------------------------" << endl;
-	cout << hum3.getName() << endl;
-	cout << hum3.getMan() << endl;
-	cout << hum3.getTelNumber() << endl;
+	Human* test = new Human[3];
+	cout << test[0].getName();
+	cout << test[1].getName();
+	cout << test[2].getName();
+	Human human("hojuhjz", true, "+44444444444");
+	cout << human.getName();
+	Apartment apart(1, test, 3);
+	cout << apart.getNumber();
+	cout << apart.getHuman(0).getName();
+	cout << apart.getHuman(1).getName();
+	cout << apart.getHuman(2).getName();
+	apart.getHuman(1).setName("Sasha");
+	cout << apart.getHuman(0).getName();
+	cout << apart.getHuman(1).getName();
+	cout << apart.getHuman(2).getName();
+	cout << apart.getSize();
+	apart.addHuman(human);
+	cout << apart.getHuman(3).getName();
+	cout << apart.getHuman(3).getTelNumber();
+	cout << apart.getSize();
+	apart.getHuman(3).setName("tetsttst");
+	cout << apart.getHuman(3).getName();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
