@@ -4,10 +4,17 @@
 #include <iostream>
 #include "Human.h"
 #include "Apartment.h"
+#include "House.h"
 using namespace std;
 int main()
 {
-	Human* humans = new Human[3]{ {},{},{} };
+	//Human* humans = new Human[3]{ {},{},{} };
+	Apartment* aparts = new Apartment[3];
+	House house("teoya", 1000, aparts, 3);
+	house.printHouseInfo();
+
+
+	/*Human* humans = new Human[3]{ {},{},{} };
 	humans[1].printInfo();
 	humans[2].printInfo();
 	humans[0].printInfo();
@@ -23,7 +30,7 @@ int main()
 		apart.delHuman(1);
 	}
 	cout << "------------------------" << endl;
-	apart.humansInfo();
+	apart.humansInfo();*/
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
