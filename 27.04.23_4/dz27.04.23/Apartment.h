@@ -19,19 +19,25 @@ public:
 	Apartment(const Apartment& apartment) {
 		this->humans = new Human[apartment.size];
 		for (int i = 0; i < apartment.size; i++) {
-			this->humans[i] = apartment.humans[i];
+			this->humans[i].setName(apartment.humans[i].getName());
+			this->humans[i].setMan(apartment.humans[i].getMan());
+			this->humans[i].setTelNumber(apartment.humans[i].getTelNumber());
+			//this->humans[i] = apartment.humans[i];
 		}
 		this->number = apartment.number;
 		this->size = apartment.size;
 	}
-	/*~Apartment() {
+	~Apartment() {
 		if (this->humans) {
 			delete[]this->humans;
 		}
-	}*/
+	}
 	void addHuman(Human human);
+	void delHuman(int index);
+	void setNumber(int id);
 	int getNumber();
 	int getSize();
 	Human& getHuman(int index);
+	void humansInfo();
 };
 

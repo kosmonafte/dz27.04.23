@@ -80,5 +80,11 @@ public:
 	char* getTelNumber() {
 		return this->telNumber;
 	}
+	void printInfo() {
+		std::cout << this->name << std::endl;
+		(this->man) ? std::cout << "Man": std::cout << "Woman"; 
+		std::cout << std::endl;
+		std::cout << this->telNumber << std::endl;
+	}
 };
 

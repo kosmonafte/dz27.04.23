@@ -7,28 +7,23 @@
 using namespace std;
 int main()
 {
-	Human* test = new Human[3];
-	cout << test[0].getName();
-	cout << test[1].getName();
-	cout << test[2].getName();
-	Human human("hojuhjz", true, "+44444444444");
-	cout << human.getName();
-	Apartment apart(1, test, 3);
-	cout << apart.getNumber();
-	cout << apart.getHuman(0).getName();
-	cout << apart.getHuman(1).getName();
-	cout << apart.getHuman(2).getName();
-	apart.getHuman(1).setName("Sasha");
-	cout << apart.getHuman(0).getName();
-	cout << apart.getHuman(1).getName();
-	cout << apart.getHuman(2).getName();
-	cout << apart.getSize();
-	apart.addHuman(human);
-	cout << apart.getHuman(3).getName();
-	cout << apart.getHuman(3).getTelNumber();
-	cout << apart.getSize();
-	apart.getHuman(3).setName("tetsttst");
-	cout << apart.getHuman(3).getName();
+	Human* humans = new Human[3]{ {},{},{} };
+	humans[1].printInfo();
+	humans[2].printInfo();
+	humans[0].printInfo();
+	Apartment apart(1, humans, 3);
+	apart.humansInfo();
+	Human hum("Sasha", true, "+71234445566");
+	hum.printInfo();
+	apart.addHuman(hum);
+	apart.humansInfo();
+	apart.addHuman(hum);
+	apart.humansInfo();
+	for (int i = 0; i < 3; i++) {
+		apart.delHuman(1);
+	}
+	cout << "------------------------" << endl;
+	apart.humansInfo();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
