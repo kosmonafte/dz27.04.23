@@ -19,10 +19,9 @@ public:
 			this->apartments[i] = apartments[i];
 		}
 	}
-	//House() :House("testovaya", 1000, {}, 1) {};
 	House() {
-		this->address = new char[strlen(address) + 1];
-		strcpy_s(this->address, strlen(address) + 1, "address");
+		this->address = new char[8];
+		strcpy_s(this->address, 8, "address");
 		this->number = 1000;
 		this->size = 2;
 		this->apartments = new Apartment[2];

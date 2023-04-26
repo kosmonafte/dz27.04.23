@@ -32,11 +32,13 @@ public:
 	Human(char* name) :Human(name, true, "************") {};
 	Human() :Human("Tester", true, "************") {};
 	Human(const Human &human) {
-		this->name = new char[strlen(human.name) + 1];
-		for (int i = 0; i < strlen(human.name); i++) {
-			this->name[i] = human.name[i];
+		if (human.name) {
+			this->name = new char[strlen(human.name) + 1];
+			for (int i = 0; i < strlen(human.name); i++) {
+				this->name[i] = human.name[i];
+			}
+			this->name[strlen(human.name)] = '\0';
 		}
-		this->name[strlen(human.name)] = '\0';
 		this->man = human.man;
 		for (int i = 0; i < 12; i++) {
 			this->telNumber[i] = human.telNumber[i];
