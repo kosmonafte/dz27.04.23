@@ -1,5 +1,12 @@
 #include "Apartment.h"
 
+std::string Apartment::getApartmentInfo()
+{
+	std::string str;
+	str.append(std::to_string(this->number));
+	return str;
+}
+
 void Apartment::addHuman(Human human)
 {
 	Human* hum = new Human[this->size + 1];

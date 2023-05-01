@@ -1,5 +1,6 @@
 #pragma once
 #include "Human.h"
+#include <string>
 class Apartment
 {
 private:
@@ -48,6 +49,7 @@ public:
 			delete[]this->humans;
 		}
 	}
+	std::string getApartmentInfo();
 	void addHuman(Human human);
 	void delHuman(int index);
 	void setNumber(int id);

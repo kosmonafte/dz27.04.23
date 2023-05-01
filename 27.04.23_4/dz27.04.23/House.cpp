@@ -9,3 +9,8 @@ void House::printHouseInfo()
 		this->apartments[i].humansInfo();
 	}
 }
+
+Apartment* House::getApartments()
+{
+	return this->apartments;
+}

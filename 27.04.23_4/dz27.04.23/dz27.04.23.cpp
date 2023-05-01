@@ -9,29 +9,11 @@ using namespace std;
 int main()
 {
 	//Human* humans = new Human[3]{ {},{},{} };
-	//Apartment* aparts = new Apartment[3];
-	//House house("teoya", 1000, aparts, 3);
-	//house.printHouseInfo();
-
-
-	Human* humans = new Human[3]{ {},{},{} };
-	humans[1].printInfo();
-	humans[2].printInfo();
-	humans[0].printInfo();
-	Apartment apart(1, humans, 3);
-	apart.humansInfo();
-	Human hum("Sasha", true, "+71234445566");
-	hum.printInfo();
-	apart.addHuman(hum);
-	apart.humansInfo();
-	apart.addHuman(hum);
-	apart.humansInfo();
-	for (int i = 0; i < 3; i++) {
-		apart.delHuman(1);
-	}
-	cout << "------------------------" << endl;
-	apart.humansInfo();
-	Apartment apart2(apart);
+	Apartment* aparts = new Apartment[3];
+	House house("Pervomayskaya", 10, aparts, 3);
+	house.getApartments()->getHuman(1).setName("newName");
+	house.printHouseInfo();
+	
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

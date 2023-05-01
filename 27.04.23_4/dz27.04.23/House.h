@@ -48,5 +48,6 @@ public:
 		}
 	}
 	void printHouseInfo();
+	Apartment* getApartments();
 };
 
