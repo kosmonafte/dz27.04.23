@@ -8,12 +8,21 @@
 using namespace std;
 int main()
 {
-	//Human* humans = new Human[3]{ {},{},{} };
+	setlocale(LC_ALL, "RUS");
 	Apartment* aparts = new Apartment[3];
-	House house("Pervomayskaya", 10, aparts, 3);
-	house.getApartments()->getHuman(1).setName("newName");
-	house.printHouseInfo();
-	
+	House house("Первомайский проспект", 10, aparts, 3);
+	house.getApartments(0).setNumber(213);
+	house.getApartments(1).setNumber(456);
+	house.getApartments(2).setNumber(700);
+	house.getApartments(0).getHuman(0).setName("Тестерович");
+	house.getApartments(0).getHuman(0).setMan(true);
+	house.getApartments(0).getHuman(1).setName("Тестеровская");
+	house.getApartments(0).getHuman(1).setTelNumber("+71234445566");
+	house.getApartments(1).addHuman({ "testName", true, "+78881234455" });
+	house.getApartments(1).addHuman({ "testName222", false, "+70001119988" });
+	house.getApartments(2).delHuman(1);
+	house.getApartments(2).getHuman(0).setName("Тестикова");
+	cout << house.houseInfo();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

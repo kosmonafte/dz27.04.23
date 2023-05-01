@@ -47,7 +47,7 @@ public:
 			delete[]this->apartments;
 		}
 	}
-	void printHouseInfo();
-	Apartment* getApartments();
+	std::string houseInfo();
+	Apartment& getApartments(int index);
 };
 

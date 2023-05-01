@@ -3,7 +3,25 @@
 std::string Apartment::getApartmentInfo()
 {
 	std::string str;
+	str.append("---------------------");
+	str.append("\n");
+	str.append("Номер квартиры - ");
 	str.append(std::to_string(this->number));
+	str.append("\n");
+	str.append("Всего проживающих - ");
+	str.append(std::to_string(this->size));
+	str.append("\n");
+	str.append("Проживающие: ");
+	str.append("\n");
+	for (int i = 0; i < this->size; i++) {
+		str.append(this->humans[i].getName());
+		str.append(" ");
+		(this->humans[i].getMan()) ? str.append("Man") : str.append("Woman");
+		str.append(" ");
+		str.append(this->humans[i].getTelNumber());
+		str.append("\n");
+	}
+	
 	return str;
 }
 

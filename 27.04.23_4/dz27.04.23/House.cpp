@@ -1,16 +1,24 @@
 #include "House.h"
 
-void House::printHouseInfo()
+std::string House::houseInfo()
 {
-	std::cout << "House number - " << this->number << std::endl;
-	std::cout << "House street - " << this->address << std::endl;
-	std::cout << "Apartments - " << this->size << std::endl;
+	std::string str;
+	str.append("Номер дома - ");
+	str.append(std::to_string(this->number));
+	str.append("\n");
+	str.append("Улица - ");
+	str.append(this->address);
+	str.append("\n");
+	str.append("Количество квартир - ");
+	str.append(std::to_string(this->size));
+	str.append("\n");
 	for (int i = 0; i < size; i++) {
-		this->apartments[i].humansInfo();
+		str.append(this->apartments[i].getApartmentInfo());
 	}
+	return str;
 }
 
-Apartment* House::getApartments()
+Apartment& House::getApartments(int index)
 {
-	return this->apartments;
+	return this->apartments[index];
 }

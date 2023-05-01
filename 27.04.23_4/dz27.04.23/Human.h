@@ -8,7 +8,7 @@ private:
 	bool man;
 	char telNumber[13];
 public:
-	Human( const char* name, bool man, const char telNumber[]) {
+	Human(const char* name, bool man, const char telNumber[]) {
 		this->name = new char[strlen(name) + 1];
 		for (int i = 0; i < strlen(name); i++) {
 			this->name[i] = name[i];
