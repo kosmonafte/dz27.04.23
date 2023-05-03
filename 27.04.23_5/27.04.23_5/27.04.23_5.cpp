@@ -7,23 +7,22 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "RUS");
-
     FILE* file;
     if (fopen_s(&file, "myFile.txt", "r") != NULL) {
         cout << "Файл открыть не удалось";
     }
     else {
         int i = 0;
+        char str[100];
         while (!feof(file)) {
-
-            fscanf_s()
-
-
-
+            fscanf_s(file, "%s", &str, sizeof(str));
+            cout << str << endl;
+            i++;
         }
+        cout << i;
     }
-    char input;
-    while (true) {
+    //char input;
+    /*while (true) {
         system("cls");
         cout << "1. Просмотреть записи" << endl;
         cout << "2. Добавить запись" << endl;
@@ -33,7 +32,7 @@ int main()
         if (input == 1) {
 
         }
-    }
+    }*/
     Reservoir reserv("Громкий", 20, 40, 5, 4);
     Reservoir res("Тихий", 100, 100, 5, 4);
     cout << reserv.getInfo();
